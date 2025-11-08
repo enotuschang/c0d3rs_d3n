@@ -5,7 +5,16 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   ssr: false,
   app: {
-    baseURL: '/c0d3rs_d3n/'
+    baseURL: '/c0d3rs_d3n/',
+    head: {
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/c0d3rs_d3n/favicon.ico'
+        }
+      ]
+    }
   },
   nitro: {
     preset: 'github-pages'
