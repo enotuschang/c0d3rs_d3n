@@ -6,7 +6,7 @@
 
 @layer base {
   html, body {
-    @apply font-primary bg-zinc-100 text-zinc-600;
+    @apply font-primary bg-stone-100 text-stone-700 transition-colors! duration-300;
   }
 
   #__nuxt {
@@ -37,55 +37,28 @@
   }
 
   .section--title {
-    @apply text-8xl font-extralight;
+    @apply text-8xl font-thin;
   }
 
   .section--paragraph {
-    @apply text-xl font-normal leading-[1.75];
+    @apply text-xl font-light leading-[1.75];
   }
 
   .section--content {
     @apply space-y-8;
 
     h1 {
-      @apply text-8xl font-extralight;
+      @apply text-8xl font-thin;
     }
 
     p {
-      @apply text-xl font-normal leading-[1.75];
+      @apply text-xl font-light leading-[1.75];
     }
-  }
-
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity .3s;
-  }
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
   }
 
   .dark {
     html, body {
-      @apply bg-zinc-900 text-zinc-300 tracking-[.026em];
-    }
-
-    .section-title {
-      @apply font-thin;
-    }
-
-    .section--paragraph {
-      @apply font-light;
-    }
-
-    .section--content {
-      h1 {
-        @apply font-thin;
-      }
-
-      p {
-        @apply font-light;
-      }
+      @apply bg-zinc-900 text-zinc-300;
     }
   }
 }
