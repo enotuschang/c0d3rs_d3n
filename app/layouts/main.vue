@@ -6,12 +6,6 @@
   <Header/>
 
   <main>
-    <div class="container">
-      <slot/>
-    </div>
+    <slot/>
   </main>
 </template>
-
-<style scoped>
-
-</style>

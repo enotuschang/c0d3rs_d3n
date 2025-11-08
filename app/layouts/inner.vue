@@ -6,16 +6,10 @@
   <Header/>
 
   <main>
-    <div class="container">
-      <NuxtLink to="/">Go back home</NuxtLink>
+    <Breadcrumbs/>
 
-      <slot/>
-    </div>
+    <slot/>
   </main>
 
   <Footer/>
 </template>
-
-<style scoped>
-
-</style>

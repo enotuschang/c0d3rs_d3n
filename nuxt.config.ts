@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   },
   fonts: {
     defaults: {
-      weights: [200, 300, 600, 700],
+      weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
       styles: ['normal', 'italic'],
       subsets: ['latin', 'cyrillic']
     },

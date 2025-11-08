@@ -5,9 +5,9 @@ definePageMeta({
 </script>
 
 <template>
-  <h1>About</h1>
+  <section class="section">
+    <div class="container">
+      <h1 class="section--title">About</h1>
+    </div>
+  </section>
 </template>
-
-<style scoped>
-
-</style>

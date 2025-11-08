@@ -6,11 +6,7 @@
 
 @layer base {
   html, body {
-    @apply font-primary tracking-wider bg-zinc-100 text-zinc-900;
-
-    @variant dark {
-      @apply bg-zinc-900 text-zinc-300;
-    }
+    @apply font-primary bg-zinc-100 text-zinc-600;
   }
 
   #__nuxt {
@@ -35,22 +31,34 @@
   .container {
     @apply mx-auto;
   }
+
+  .dark {
+    html, body {
+      @apply bg-zinc-900 text-zinc-300 tracking-[.026em];
+    }
+  }
 }
 
 @layer components {
-  .title {
-    @apply text-3xl font-bold;
-
-    @variant dark {
-      @apply font-semibold;
-    }
+  .section {
+    @apply py-8;
   }
 
-  .paragraph {
-    @apply text-xl font-light italic;
+  .section--title {
+    @apply text-8xl font-extralight;
+  }
 
-    @variant dark {
-      @apply font-extralight;
+  .section--paragraph {
+    @apply text-xl font-normal leading-[1.75];
+  }
+
+  .dark {
+    .section-title {
+      @apply font-thin;
+    }
+
+    .section--paragraph {
+      @apply font-light;
     }
   }
 }
