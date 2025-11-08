@@ -36,4 +36,17 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  fonts: {
+    defaults: {
+      weights: [200, 300, 600, 700],
+      styles: ['normal', 'italic'],
+      subsets: ['latin', 'cyrillic']
+    },
+    families: [
+      {
+        name: 'Noto Sans',
+        provider: 'google'
+      }
+    ]
+  }
 })

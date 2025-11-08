@@ -1,20 +1,56 @@
 @import "tailwindcss";
 
-#__nuxt {
-  display:grid;
-  grid-template-areas:'header' 'main' 'footer';
-  grid-template-rows:auto 1fr auto;
-  min-height:100vh;
+@theme {
+  --font-primary:"Noto Sans", "sans-serif";
+}
 
-  header {
-    grid-area:header;
+@layer base {
+  html, body {
+    @apply font-primary tracking-wider bg-zinc-100 text-zinc-900;
+
+    @variant dark {
+      @apply bg-zinc-900 text-zinc-300;
+    }
   }
 
-  main {
-    grid-area:main;
+  #__nuxt {
+    display:grid;
+    grid-template-areas:'header' 'main' 'footer';
+    grid-template-rows:auto 1fr auto;
+    min-height:100vh;
+
+    header {
+      grid-area:header;
+    }
+
+    main {
+      grid-area:main;
+    }
+
+    footer {
+      grid-area:footer;
+    }
   }
 
-  footer {
-    grid-area:footer;
+  .container {
+    @apply mx-auto;
+  }
+}
+
+@layer components {
+  .title {
+    @apply text-3xl font-bold;
+
+    @variant dark {
+      @apply font-semibold;
+    }
+  }
+
+  .paragraph {
+    @apply text-xl font-light italic;
+
+    @variant dark {
+      @apply font-extralight;
+    }
   }
 }

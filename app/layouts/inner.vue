@@ -6,9 +6,11 @@
   <Header/>
 
   <main>
-    <NuxtLink to="/">Go back home</NuxtLink>
+    <div class="container">
+      <NuxtLink to="/">Go back home</NuxtLink>
 
-    <slot/>
+      <slot/>
+    </div>
   </main>
 
   <Footer/>
