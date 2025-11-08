@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import { useColorMode } from '#imports'
 
-const colorMode = useColorMode()
-
-const themeToggleHandler = () => {
-  colorMode.value = colorMode.value === 'light' ? 'dark' : 'light'
-}
 </script>
 
 <template>
@@ -17,11 +11,7 @@ const themeToggleHandler = () => {
 
       <NuxtLink to="/contacts">Contacts</NuxtLink>
 
-      <UButton
-          class="ml-auto"
-          @click="themeToggleHandler"
-          :label="colorMode.value === 'light' ? 'dark' : 'light'"
-      />
+      <UColorModeButton class="ml-auto"/>
     </div>
   </header>
 </template>

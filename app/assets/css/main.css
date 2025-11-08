@@ -32,14 +32,6 @@
     @apply mx-auto;
   }
 
-  .dark {
-    html, body {
-      @apply bg-zinc-900 text-zinc-300 tracking-[.026em];
-    }
-  }
-}
-
-@layer components {
   .section {
     @apply py-8;
   }
@@ -53,6 +45,10 @@
   }
 
   .dark {
+    html, body {
+      @apply bg-zinc-900 text-zinc-300 tracking-[.026em];
+    }
+
     .section-title {
       @apply font-thin;
     }
@@ -62,3 +58,4 @@
     }
   }
 }
+
