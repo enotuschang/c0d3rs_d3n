@@ -23,10 +23,26 @@ useSeoMeta({
 
 <template>
   <section class="section">
-    <div class="container">
-      <h1 class="section--title">
-        Hello, world!
-      </h1>
+    <HomeMenu/>
+
+    <div class="content">
+      <h1 v-text="data?.title"/>
     </div>
+
+    <div class="flex flex-col gap-4">
+      <LangSwitcher/>
+
+      <UColorModeButton/>
+    </div>
+
   </section>
 </template>
+
+<style scoped>
+@reference "tailwindcss";
+
+.section {
+  --container-mw:calc(100vh * 1.778);
+  @apply grid grid-cols-[1fr_100vh_1fr] items-center max-w-(--container-mw) h-screen mx-auto;
+}
+</style>

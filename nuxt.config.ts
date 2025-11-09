@@ -28,7 +28,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/test-utils',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxtjs/i18n'
   ],
   css: ['~/assets/css/main.css'],
   vite: {
@@ -48,5 +49,27 @@ export default defineNuxtConfig({
         provider: 'google'
       }
     ]
+  },
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'En',
+        file: 'en.json'
+      },
+      {
+        code: 'ru',
+        name: 'Ру',
+        file: 'ru.json'
+      }
+    ],
+    langDir: 'locales',
+    defaultLocale: 'ru',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    }
   }
 })
