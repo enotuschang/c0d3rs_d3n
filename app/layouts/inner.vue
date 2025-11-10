@@ -5,7 +5,7 @@
 <template>
   <Header/>
 
-  <main>
+  <main class="flex flex-col">
     <Breadcrumbs/>
 
     <slot/>
