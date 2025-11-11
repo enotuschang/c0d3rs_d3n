@@ -2,18 +2,39 @@
 
 @theme {
   --font-primary:"Noto Sans", "sans-serif";
+
+  --breakpoint-sm:576px;
+  --breakpoint-md:768px;
+  --breakpoint-lg:992px;
+  --breakpoint-xl:1200px;
+  --breakpoint-2xl:1400px;
+  --breakpoint-3xl:1800px;
+
+  --container-max-w:min(100vw, 100dvh);
 }
 
 @layer base {
+  html {
+    font-size:calc(16 / 360 * 100vw);
+
+    @media (min-width:768px) {
+      font-size:calc(16 / 768 * 100vw);
+
+      @media (orientation:landscape) {
+        font-size:calc(16 / 768 * 100dvh);
+      }
+    }
+  }
+
   html, body {
-    @apply font-primary bg-stone-100 text-stone-700 transition-colors! duration-300;
+    @apply font-primary bg-stone-100 text-stone-700 transition-colors! duration-300 overflow-x-hidden overflow-y-auto;
   }
 
   #__nuxt {
     display:grid;
     grid-template-areas:'header' 'main' 'footer';
     grid-template-rows:auto 1fr auto;
-    min-height:100vh;
+    min-height:100dvh;
 
     header {
       grid-area:header;
@@ -28,34 +49,6 @@
     }
   }
 
-  .container {
-    @apply mx-auto;
-  }
-
-  .section {
-    @apply py-8;
-  }
-
-  .section--title {
-    @apply text-8xl font-thin;
-  }
-
-  .section--paragraph {
-    @apply text-xl font-light leading-[1.75];
-  }
-
-  .section--content {
-    @apply space-y-8;
-
-    h1 {
-      @apply text-8xl font-thin;
-    }
-
-    p {
-      @apply text-xl font-light leading-[1.75];
-    }
-  }
-
   .dark {
     html, body {
       @apply bg-zinc-900 text-zinc-300;
@@ -63,3 +56,30 @@
   }
 }
 
+@utility section {
+  @apply py-8;
+}
+
+@utility section--title {
+  @apply text-8xl font-thin;
+}
+
+@utility section--paragraph {
+  @apply text-xl font-light leading-[1.75];
+}
+
+@utility section--content {
+  @apply space-y-8;
+
+  h1 {
+    @apply text-8xl font-thin;
+  }
+
+  p {
+    @apply text-xl font-light leading-[1.75];
+  }
+}
+
+@utility container {
+  @apply max-w-(--container-max-w) mx-auto px-6;
+}

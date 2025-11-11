@@ -10,8 +10,6 @@
       <NuxtLink to="/about">About</NuxtLink>
 
       <NuxtLink to="/contacts">Contacts</NuxtLink>
-
-      <UColorModeButton class="ml-auto"/>
     </div>
   </header>
 </template>

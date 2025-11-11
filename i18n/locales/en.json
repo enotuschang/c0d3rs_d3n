@@ -4,5 +4,9 @@
     "works": "Works",
     "blog": "Blog",
     "contacts": "Contacts"
+  },
+  "home": {
+    "title": "Coder's Den",
+    "description": "My web development projects, useful articles about programming and IT. Check out the portfolio and contact me to discuss your projects."
   }
 }
