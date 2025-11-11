@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <main>
+  <main class="flex flex-col">
     <slot/>
   </main>
 </template>

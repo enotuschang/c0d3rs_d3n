@@ -3,46 +3,28 @@ definePageMeta({
   layout: 'main'
 })
 
-const {data, status, error} = useAsyncData('/', () => {
-  return queryCollection('content').path('/').first()
-}, {
-  getCachedData(key, nuxtApp) {
-    return nuxtApp.payload.data[key] || nuxtApp.static.data[key]
-  }
-})
+const {t} = useI18n()
 
 useSeoMeta({
-  title: computed(() => {
-    if (status.value === 'pending') return 'Loading...'
-
-    return data.value?.title
-  }),
-  description: computed(() => data.value?.description)
+  title: t('home.title'),
+  description: t('home.description')
 })
 </script>
 
 <template>
+  <section class="section text-center">
+      Logo
+  </section>
+
+  <section class="section my-auto">
+    <div class="container">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3">
+        <HomeMenu/>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
-    <HomeMenu/>
-
-    <div class="content">
-      <h1 v-text="data?.title"/>
-    </div>
-
-    <div class="flex flex-col gap-4">
-      <LangSwitcher/>
-
-      <UColorModeButton/>
-    </div>
-
+    <LangSwitcher/>
   </section>
 </template>
-
-<style scoped>
-@reference "tailwindcss";
-
-.section {
-  --container-mw:calc(100vh * 1.778);
-  @apply grid grid-cols-[1fr_100vh_1fr] items-center max-w-(--container-mw) h-screen mx-auto;
-}
-</style>

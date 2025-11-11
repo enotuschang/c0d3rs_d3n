@@ -1,14 +1,18 @@
 <script setup lang="ts">
-const {name, langSwitch} = useLangSwitcher()
+const {locale: code = 'ru', locales = [], setLocale} = useI18n()
 </script>
 
 <template>
-  <UButton
-      v-if="name"
-      :label="name"
-      class="cursor-pointer"
-      @click="langSwitch"
-  />
+  <div class="flex justify-center items-center gap-4">
+    <UButton
+        v-for="locale in locales"
+        :label="locale.name"
+        :disabled="locale.code === code"
+        size="lg"
+        class="cursor-pointer"
+        @click="setLocale(locale.code)"
+    />
+  </div>
 </template>
 
 <style scoped>
