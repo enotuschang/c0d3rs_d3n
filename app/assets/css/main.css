@@ -30,6 +30,14 @@
     @apply font-primary bg-stone-100 text-stone-700 transition-colors! duration-300 overflow-x-hidden overflow-y-auto;
   }
 
+  /*body {*/
+  /*  background-image:url(../../assets/images/home-bg.jpg);*/
+  /*  background-position:center;*/
+  /*  background-size:cover;*/
+  /*  background-repeat:no-repeat;*/
+  /*  background-attachment:fixed;*/
+  /*}*/
+
   #__nuxt {
     display:grid;
     grid-template-areas:'header' 'main' 'footer';

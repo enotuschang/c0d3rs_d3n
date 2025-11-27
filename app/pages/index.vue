@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 definePageMeta({
   layout: 'main'
 })
@@ -13,7 +14,7 @@ useSeoMeta({
 
 <template>
   <section class="section text-center">
-      Logo
+    Logo
   </section>
 
   <section class="section my-auto">

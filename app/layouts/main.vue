@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <main class="flex flex-col">
+  <HomeBackground/>
+
+  <main class="flex flex-col relative z-1">
     <slot/>
   </main>
 </template>
