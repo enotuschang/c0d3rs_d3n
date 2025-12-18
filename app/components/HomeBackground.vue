@@ -11,7 +11,7 @@ onMounted(() => {
   scene.background = null
 
   const camera = new THREE.PerspectiveCamera(
-      75,
+      90,
       canvasEl.value.clientWidth / canvasEl.value.clientHeight,
       0.1,
       1000
@@ -26,28 +26,28 @@ onMounted(() => {
   renderer.setSize(canvasEl.value.clientWidth, canvasEl.value.clientHeight)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-  const geometry = new THREE.BoxGeometry(2, 2, 2)
+  const geometry = new THREE.BoxGeometry(3, 3, 3)
 
   const material = new THREE.MeshPhongMaterial({
-    color: 0x888888,
-    shininess: 30
+    color: 0xffffff,
+    shininess: 50
   })
 
   const cube = new THREE.Mesh(geometry, material)
   scene.add(cube)
 
-  const ambientLight = new THREE.AmbientLight(0x404040, 0.6); // Мягкое рассеянное освещение
+  const ambientLight = new THREE.AmbientLight(0xcceeff, 1); // Мягкое рассеянное освещение https://ru.hexcolor16.com/e1f3fa
   scene.add(ambientLight)
 
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8); // Направленный свет
+  const directionalLight = new THREE.DirectionalLight(0xffeebb, 1); // Направленный свет
   directionalLight.position.set(3, 3, 3);
   scene.add(directionalLight)
 
   const animate = () => {
     requestAnimationFrame(animate)
 
-    cube.rotation.x += 0.01
-    cube.rotation.y += 0.01
+    cube.rotation.x += 0.001
+    cube.rotation.y += 0.001
 
     renderer.render(scene, camera)
   }
