@@ -5,15 +5,11 @@
 <template>
   <Header/>
 
-  <main>
-    <NuxtLink to="/">Go back home</NuxtLink>
+  <main class="flex flex-col">
+    <Breadcrumbs/>
 
     <slot/>
   </main>
 
   <Footer/>
 </template>
-
-<style scoped>
-
-</style>

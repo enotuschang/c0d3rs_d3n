@@ -3,7 +3,17 @@
 </script>
 
 <template>
-<header>Header</header>
+  <header>
+    <div class="container flex items-center gap-4">
+      Header
+
+      <NuxtLink to="/about">About</NuxtLink>
+
+      <NuxtLink to="/contacts">Contacts</NuxtLink>
+
+      <UColorModeButton class="ml-auto"/>
+    </div>
+  </header>
 </template>
 
 <style scoped>
