@@ -22,25 +22,25 @@ jobs:
         with:
           node-version: 24.14.0
 
-      - name: Update npm
-        run: |
-          npm install -g npm@11.9.0
-          npm --version
+#      - name: Update npm
+#        run: |
+#          npm install -g npm@11.9.0
+#          npm --version
 
-      - name: Check versions
-        run: |
-          node --version
-          npm --version
-          which npm
+#      - name: Check versions
+#        run: |
+#          node --version
+#          npm --version
+#          which npm
 
-      - name: Clean npm cache
-        run: npm cache clean --force
+#      - name: Clean npm cache
+#        run: npm cache clean --force
 
-      - name: Remove lock file and node_modules
-        run: |
-          rm -rf node_modules
-          rm -f package-lock.json
-          rm -rf .npm
+#      - name: Remove lock file and node_modules
+#        run: |
+#          rm -rf node_modules
+#          rm -f package-lock.json
+#          rm -rf .npm
 
       - name: Install dependencies
         run: npm install
